@@ -1,0 +1,31 @@
+#link-container {
+    width: 60%;
+    margin-top: 1%;
+    margin-left: 100px;
+}
+.link-list {
+    white-space: nowrap;
+}
+
+.parents {
+    display: inline-block;
+    text-align: left;
+    width: fit-content;
+    block-size: fit-content;
+}
+
+.parents:hover {
+    color: rgb(22, 234, 217);
+}
+
+.current {
+    display: inline-block;
+    text-align: left;
+    font-weight: bold;
+    width: fit-content;
+    block-size: fit-content;
+}
+
+.current:hover {
+    color: rgb(22, 234, 217);
+}

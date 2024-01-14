@@ -1,0 +1,63 @@
+#item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    height: 450px;
+    width: 250px;
+    margin: 1em 10px;
+    /* box-shadow: 2px 2px 1px rgb(99, 92, 92); */
+}
+
+#item:hover {
+    transform: scale(1.05);
+}
+
+#item > .img {
+    width: 100%;
+    object-fit: cover;
+    height: 170px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#item > .item-detail > .title {
+    font-size: 1rem;
+    font-weight: 700;
+    height: 72px;
+}
+
+#item > .item-detail > .price {
+    margin: 10px 0;
+}
+
+#item > .item-detail > .price > .cost {
+    color: gray;
+    opacity: 0.6;
+    font-size: 0.7rem;
+    text-decoration: line-through;
+}
+
+#item > .item-detail > .price > .discount {
+    color: red;
+    font-weight: 700;
+    font-size: 0.8;
+}
+
+#item > .item-detail > .data {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 30px;
+}
+
+#item > .item-detail > .data > .row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+}
+
+#item > .item-detail > .data > .row > .title {
+    font-weight: 700;
+}

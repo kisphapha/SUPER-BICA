@@ -1,0 +1,122 @@
+#navbar {
+    display: flex;
+    background-color: lightgray;
+    width: 100%;
+    /* padding: 0px 300px; */
+    justify-content: center;
+    position: sticky;
+    top: -1px;
+    z-index: 1;
+}
+
+#navbar > .menu {
+    background-color: gray;
+    margin-left: 0px;
+    position: relative;
+}
+
+#navbar > .menu > .menu-button {
+    padding: 10px;
+    width: 220px;
+    text-align: justify-all;
+}
+#navbar > .nav > .cart-button {
+    /* margin-right: 20%; */
+    /* background-color: black; */
+    color: black;
+    border: none;
+    width: 100px;
+    position: absolute;
+    right: 15%;
+}
+
+#navbar > .menu > .menu-list {
+    z-index: 100;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* list-style: none; */
+    flex-direction: column;
+    padding: 0px;
+    background-color: #bdbdbd;
+    width: 100%;
+    border: 1px solid black;
+}
+
+#navbar > .menu > .menu-list > li {
+    border: 1px solid black;
+    padding: 10px;
+    width: 100%;
+}
+
+#navbar > .menu > .menu-list > li:hover{
+    background-color: gray;
+}
+
+#navbar > .menu:hover > .menu-list {
+    display: flex
+}
+
+#navbar > .menu > .menu-list > .cage-menu > .cage {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#navbar > .menu > .menu-list > .cage-menu {
+    display: flex;
+    position: relative;
+}
+
+#navbar > .menu > .menu-list > .cage-menu > .cage-list{
+    z-index: 100;
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -2px;
+    flex-direction: column;
+    padding: 0px;
+    background-color: #bdbdbd;
+    width: 100%;
+    border: 1px solid black;
+}
+
+#navbar > .menu > .menu-list > .cage-menu > .cage-list > li{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#navbar > .menu > .menu-list > .cage-menu > .cage-list > li:hover{
+    background-color: gray;
+}
+
+#navbar > .menu > .menu-list > .cage-menu:hover > .cage-list{
+    display: flex;
+}
+
+#navbar > .nav {
+    display: flex;
+    margin-left: 0;
+    align-items: center;
+}
+
+.nav-content {
+    padding: 10px 20px 10px 10px;
+}
+
+#navbar > .nav > .cart-button > .nav-content {
+    padding: 7.725px 10px 7.725px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-content:hover {
+    color: rgb(22, 234, 217);
+    background-color: darkgray;
+}
+
+.nav .active {
+    font-weight: bold;
+    background-color: rgb(238, 238, 238);
+}

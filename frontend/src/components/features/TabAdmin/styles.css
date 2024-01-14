@@ -1,0 +1,4 @@
+.active-dashboard {
+    background-color: #007bff !important; /* Use !important to ensure custom styles take precedence */
+    color: #fff !important;
+}

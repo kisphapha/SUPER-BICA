@@ -1,0 +1,30 @@
+.dashboard {
+    width: 100%;
+    align-items: center;
+}
+
+.dashboard-detail {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 65% 30%;
+    gap: 15px;
+}
+
+.chart-container {
+    background-color: white;
+    padding: 10px 10px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 3px lightgray;
+}
+
+.leaderboard-container{
+    background-color: white;
+    padding: 10px 10px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 3px lightgray;
+}
+
+.best-seller{
+    width: 100%;
+    table-layout: fixed;
+}

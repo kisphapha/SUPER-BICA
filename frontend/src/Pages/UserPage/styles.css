@@ -1,0 +1,64 @@
+.user-page {
+    /* min-height: 100vh; */
+    padding-bottom: 15vh;
+}
+.user-page > .user-container {
+    padding: 1em 10% 5em 10%;
+    height: auto;
+    display: flex;
+}
+
+.user-page > .user-container > .user-view {
+    min-height: 480px;
+    height: fit-content;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 3px 3px 2px rgb(211, 211, 211);
+    border-radius: 4px;
+    padding: 0 1.875rem 0.625rem;
+}
+
+/* 
+
+.user-page > .user-container > .user-utilities{
+    height: 30em;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    line-height: 2;
+}
+
+.user-page > .user-container > .user-view > .form-header{
+    padding: 18px 0px;
+}
+
+.user-page > .user-container > .user-view > .form-header > h1{
+    font-size: 1.25rem;
+}
+
+.user-page > .user-container > .user-view > .form-header > p{
+    font-size: .8rem; 
+    margin-top: 3px;
+}
+
+.user-page > .user-container > .user-view > .form-inner {
+    padding: 30px 0 0 0;
+}
+
+.user-page > .user-container > .user-view > .form-inner > table > tr > td {
+    padding: 15px;
+}
+
+.user-page > .user-container > .user-view > .form-inner > table > tr > td:first-child{
+    text-align: right;
+}
+
+.user-page > .user-container > .user-view > .form-inner > table > tr > td > .user-input {
+    border: 1px solid #000000;
+    padding: 7px;
+    width: 30em;
+}
+ */

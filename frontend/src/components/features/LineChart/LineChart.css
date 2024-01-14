@@ -1,0 +1,72 @@
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .8s;
+    transition: .8s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    border-radius: 4px;
+    content: "Month";
+    height: 26px;
+    width: 54px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .8s;
+    transition: .8s;
+    text-align: center;
+  }
+  
+  input:checked + .slider {
+    color: black;
+    background-color: #007BFF;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #007BFF;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(58px);
+    content: "Year";
+  }
+  
+  .period{
+    width: 60px;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .preriod-picker{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 20% 20% 16%;
+    gap: 5%;
+    align-items: center;
+    justify-content: right;
+  }

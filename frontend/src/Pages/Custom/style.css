@@ -1,0 +1,10 @@
+.highlighted-component {
+    background-color: #ffff00; /* Yellow background color */
+    /* Add any other highlighting styles you want */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

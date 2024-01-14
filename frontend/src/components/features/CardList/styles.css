@@ -1,0 +1,40 @@
+#item-container {
+    display: flex;
+    background-color: #eeeeee;
+    padding: 0px 100px;
+    flex-direction: column;
+    margin: 30px 0;
+}
+
+#item-container > .name {
+    border-radius: 10px;
+    padding: 5px 20px;
+    background-color: gray;
+    color: #262626;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5%;
+}
+
+#item-container > .name > .more {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    transition: all 0.2s linear;
+}
+
+#item-container > .name > .more:hover {
+    /* background-color: #f7e9f333; */
+    color: #262626;
+}
+
+#item-container > .item-list {
+    /* display: grid;
+    grid-template-columns: repeat(5, 1fr); */
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}

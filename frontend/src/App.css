@@ -1,0 +1,16 @@
+/* #signInDiv{
+  transition: 0.2s;
+  background-image: url("./icons/google.png");
+  width: 30px;
+  height: 30px;
+  border-radius: 0.5em;
+  background-color: #2FC8C4;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+#signInDiv:hover{
+  transform: scale(1.05);
+}  */

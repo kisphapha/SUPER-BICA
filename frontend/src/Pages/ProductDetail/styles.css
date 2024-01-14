@@ -1,0 +1,225 @@
+#page-product {
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 12rem;
+}
+#page-product > .product-container > .product {
+    margin-top: 20px;
+    padding-top: 20px;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: #e0e0e0;
+}
+#page-product > .product-container > .product > .img-container {
+    /* margin-right: 300px; */
+    width: 50%;
+    align-content: center;
+}
+#page-product > .product-container > .product > .img-container > .img-main {
+    align-content: center;
+}
+#page-product > .product-container > .product > .img-container > .img-main > .image {
+    border: 1px solid;
+}
+#page-product > .product-container > .product > .img-container > .img-main > .big-img {
+    border: 5px solid;
+    width: 100%;
+}
+#page-product > .product-container > .product > .img-container > .img-more {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-bottom: 8px;
+}
+#page-product > .product-container > .product > .img-container > .img-more > .img {
+    border: 1px solid;
+    width: 100px;
+    height: 100px;
+}
+#page-product > .product-container > .product > .product-detail {
+    width: 60%;
+    padding-left: 30px;
+    justify-content: center;
+}
+#page-product > .product-container > .product > .product-detail > .name {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: rgb(243, 62, 62);
+}
+#page-product > .product-container > .product > .product-detail > .price {
+    flex-direction: column;
+    margin: 30px 0;
+    text-align: end;
+    padding-right: 100px;
+    /* display: flex;
+    justify-content: right; */
+}
+#page-product > .product-container > .product > .product-detail > .price .discount {
+    color: red;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+#page-product > .product-container > .product > .product-detail > .price > .cost {
+    color: gray;
+    opacity: 0.6;
+    font-size: 1.2rem;
+    text-decoration: line-through;
+}
+#page-product > .product-container > .product > .product-detail > .data {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 30px;
+    margin-bottom: 70px;
+}
+#page-product > .product-container > .product > .product-detail > .data > .row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+}
+
+#page-product > .product-container > .product > .product-detail > .data > .row > .title {
+    font-weight: 700;
+}
+#page-product > .product-container > .product > .product-detail > .option {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+#page-product > .product-container > .product > .product-detail > .option > .quantity {
+    display: flex;
+    width: fit-content;
+    background-color: #ccc;
+}
+
+#page-product > .product-container > .product > .product-detail > .option > .quantity > .quantity-show {
+    width: 100px;
+    text-align: center;
+    justify-content: center;
+    line-height: 30px; /* Vertically center text */
+    font-weight: bold; /* Make the text bold */
+    font-size: 18px; /* Increase font size for better visibility */
+}
+
+#page-product > .product-container > .product > .product-detail > .option > .quantity > .button {
+    height: auto;
+    width: 30px;
+    border: 1px solid #ccc; /* Add a border to the button */
+    border-radius: 0%; /* Round the button to make it look like a circle */
+    background-color: #fff; /* White background color */
+    cursor: pointer; /* Change cursor to a pointer on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Add transitions for hover and click effects */
+}
+
+#page-product > .product-container > .product > .product-detail > .option > .quantity > .button:hover {
+    background-color: #f0f0f0; /* Light gray background color on hover */
+}
+
+#page-product > .product-container > .product > .product-detail > .option > .quantity > .button:active {
+    transform: scale(0.9); /* Slightly scale down the button on click */
+}
+#page-product > .product-container > .product > .product-detail > .option > .add-cart {
+    width: max-content;
+    padding: 5px;
+    /* background-color: #18dcff; */
+    /* border-radius: 10px; */
+    transition: all 0.2s linear;
+    cursor: pointer;
+    font-weight: 700;
+}
+#page-product > .product-container > .product > .product-detail > .option > .add-cart:hover {
+    transform: scale(1.05);
+}
+#page-product > .product-container > .product > .product-detail > .buy:hover {
+    background: #1664c0;
+    transform: scale(1.05);
+}
+#page-product > .product-container > .product > .product-detail > .buy {
+    color: white;
+    margin: 100px 50px;
+    background-color: #1a77e6;
+    border-radius: 10px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+#page-product > .product-container > .product > .product-detail > .buy > .t1 {
+    font-weight: bold;
+    text-align: center;
+}
+#page-product > .product-container > .product > .product-detail > .buy > .t2 {
+    text-align: center;
+}
+#page-product > .product-container > .description {
+    margin-top: 20px;
+    padding-top: 20px;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    background-color: #e0e0e0;
+}
+#page-product > .product-container > .feedback {
+    height: fit-content;
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+    padding: 20px 20px 10px 20px;
+    margin-left: 300px;
+    margin-right: 300px;
+    /* min-height: 500px; */
+    display: flex;
+    flex-direction: column;
+    background-color: #e0e0e0;
+}
+
+.popup-order {
+    position: relative;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 20px;
+}
+
+.adr-container {
+    width: 100%;
+    min-height: 67.91px;
+    display: flex;
+    gap: 5%;
+}
+
+.phone-container {
+    width: 85%;
+    min-height: 67.91px;
+}
+
+/* .add-address-btn {
+    width: 10%;
+} */
+
+.curr-item {
+    width: 100%;
+}
+
+.popup-order > .container > h1 {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.paymentMethod {
+    padding-left: 5em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

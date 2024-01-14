@@ -1,0 +1,77 @@
+.order-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    margin-top:5%;
+}
+
+.order-card img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+.order-infor{
+    display:inline-block
+}
+.order-infor-2 {
+    margin-left: 30%;
+    display: inline-block
+}
+.order-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.order-price {
+    text-align:center;
+    color: red;
+    font-weight: 700;
+    /*font-size: 0.8;*/
+}
+.btn-rebuy {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+    width:100%;
+}
+.btn-rating {
+    background-color: #e5a049;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.btn-rebuy:hover {
+    background-color: #45a049;
+}
+
+.btn-rating:hover {
+    background-color: #cfa049;
+}
+
+.btn-rebuy:focus {
+    outline: none;
+}
+
+.order-button{
+    display: flex;
+}
+
+.order-button > .btn-rebuy{
+    width: 5em
+}
+.order-button > .btn-rating{
+    width: 7em;
+}

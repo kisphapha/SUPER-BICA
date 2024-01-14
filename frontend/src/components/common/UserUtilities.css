@@ -1,0 +1,77 @@
+.user-utilities {
+    height: 30em;
+    min-width: 220px;
+    max-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    /* background: #9e9e9e; */
+}
+
+.user-utilities > .user-holder {
+    padding: 22px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+    .user-utilities > .user-holder > img {
+        height: 150px;
+        width: 150px;
+        border-radius: 100%;
+    }
+
+    .user-utilities > .user-holder > h1 {
+        width: 100%;
+        font-size: 150%;
+    }
+
+.user-utilities > .utilities {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: left;
+    line-height: 2.5;
+}
+
+.ult-txt {
+    padding-left: 20%;
+}
+
+.ult-txt:hover {
+    color: rgb(22, 234, 217);
+}
+
+.user-utilities > .utilities > .active {
+    font-weight: bold;
+    color: rgb(22, 234, 217);
+    border-radius: 4px 0px 0px 4px;
+    background-color: rgb(255, 255, 255);
+}
+
+.user-utilities > .utilities > .active {
+    position: relative;
+}
+
+.user-utilities > .utilities > .active::before,
+.user-utilities > .utilities > .active::after {
+    content: ' ';
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    right: 0;
+}
+
+.user-utilities > .utilities > .active::before {
+    top: -20px;
+    border-radius: 0 0 4px 0;
+    box-shadow: 0px 10px rgb(255, 255, 255);
+}
+
+.user-utilities > .utilities > .active::after {
+    border-radius: 0 4px 0 0;
+    box-shadow: 0px -10px rgb(255, 255, 255);
+}

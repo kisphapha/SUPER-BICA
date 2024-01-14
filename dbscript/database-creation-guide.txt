@@ -1,0 +1,5 @@
+1. Open SSMS, Login
+2. Right click on Databases folder -> Import Data-tier Application 
+3. Next -> Import from local disk -> Navigate to the bica.bacpac file on dbscript folder -> Next
+4. Choose server and database name (optional) -> Next
+5. Finish

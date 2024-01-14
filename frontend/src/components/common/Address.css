@@ -1,0 +1,44 @@
+.address-header {
+    padding: 1em 0 1em 0;
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+    gap: 60%;
+}
+
+.address-header > h1 {
+    margin: auto;
+    margin-left: 0;
+}
+
+.address-header > .add-btn {
+    padding: 0.5em;
+    background-color: aquamarine;
+    border-radius: 4px;
+}
+
+.address-list {
+    padding-top: 20px;
+}
+
+.popup-address {
+    position: relative;
+    height: 470px;
+    display: flex;
+    flex-direction: column;
+    padding: 45px;
+    gap: 45px;
+}
+
+.address-table{
+    width: 100%;
+}
+
+.decision {
+    border-radius: 4px;
+    color: black;
+}
+
+/* button:focus {
+    background-color: aliceblue;
+} */

@@ -1,0 +1,42 @@
+#ex-item-container {
+    display: flex;
+    background-color: #eeeeee;
+    padding: 0px 100px;
+    flex-direction: column;
+    margin: 30px 0;
+}
+
+#ex-item-container > .name {
+    border-radius: 10px;
+    padding: 5px 20px;
+    background-color: #424242;
+    color: white;
+    font: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+#ex-item-container > .name > .more {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    transition: all 0.2s linear;
+}
+
+#ex-item-container > .name > .more:hover {
+    background-color: #f7e9f333;
+}
+
+.rec-arrow-left:hover,
+.rec-arrow-right:hover {
+    background-color: rgb(189, 189, 189) !important;
+}
+
+/* #ex-item-container > .item-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+} */

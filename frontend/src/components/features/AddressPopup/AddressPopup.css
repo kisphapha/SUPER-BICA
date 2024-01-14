@@ -1,0 +1,8 @@
+.location{
+    padding-bottom: 30px;
+}
+.buttons {
+    display: flex;
+    justify-content: right;
+    gap: 30px;
+}

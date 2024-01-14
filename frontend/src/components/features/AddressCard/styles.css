@@ -1,0 +1,32 @@
+#adr-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    width: 100% ;
+}
+
+.adr-comp {
+    display:inline-block;
+    margin-right: 4px;
+    color: #999999;
+}
+
+.adr-grp :first-child{
+    font-size: large;
+    color: black;
+}
+
+.adr-item-detail{
+    display: flex;
+    justify-content: space-between;
+    gap: normal;
+    width: 100%;
+}
+
+.adr-item-detail > .ftn{
+    display: flex;
+    right: 0px;
+    align-items: center;
+}

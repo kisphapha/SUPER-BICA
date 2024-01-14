@@ -1,0 +1,32 @@
+.quantity-show {
+    display: flex;
+    width: fit-content;
+    background-color: #ccc;
+}
+
+.quantity-show {
+    width: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    line-height: 30px; /* Vertically center text */
+    font-weight: bold; /* Make the text bold */
+    font-size: 18px; /* Increase font size for better visibility */
+}
+
+.quantity-button {
+    height: auto;
+    width: 30px;
+    border: 1px solid #ccc; /* Add a border to the button */
+    border-radius: 0%; /* Round the button to make it look like a circle */
+    background-color: #fff; /* White background color */
+    cursor: pointer; /* Change cursor to a pointer on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Add transitions for hover and click effects */
+}
+.quantity-button:hover {
+    background-color: #f0f0f0; /* Light gray background color on hover */
+}
+
+.quantity-button:active {
+    transform: scale(0.9); /* Slightly scale down the button on click */
+}
