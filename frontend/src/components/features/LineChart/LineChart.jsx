@@ -23,7 +23,7 @@ function LineChart({user }) {
                 year
             }, {
                 headers: {
-                    Authorization: 'Bearer ' + user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
         } else {
@@ -31,7 +31,7 @@ function LineChart({user }) {
                 year
             }, {
                 headers: {
-                    Authorization: 'Bearer ' + user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
         }

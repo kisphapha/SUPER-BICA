@@ -66,7 +66,7 @@ export default function Order() {
     async function fetchRefund() {
         const response = await axios.get(`http://localhost:3000/order/refund/${user.Id}`, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         console.log(response.data)
@@ -76,7 +76,7 @@ export default function Order() {
     async function fetchOrder() {
         const response = await axios.get(`http://localhost:3000/order`, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         if (response.data) {

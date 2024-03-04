@@ -52,7 +52,7 @@ const BicaCoinPage = () => {
         })
         const newUser = {}
         newUser.userData = response.data
-        newUser.token = user.token
+        newUser.token = sessionStorage.loginedUser
         sessionStorage.setItem('loginedUser', JSON.stringify(newUser))
     }
 

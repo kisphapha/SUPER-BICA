@@ -37,7 +37,7 @@ export default function CustomOrder() {
     async function fetchCustomOrder() {
         const response = await axios.get(`http://localhost:3000/custom`, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         if (response.data) {

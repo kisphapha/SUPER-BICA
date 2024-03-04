@@ -62,7 +62,7 @@ export default function Users() {
         if (userId != user.Id) {
             const response = await axios.post(`http://localhost:3000/admin/updateUser`, json, {
                 headers: {
-                    Authorization: 'Bearer ' + user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             setUsers(response.data)
@@ -80,24 +80,24 @@ export default function Users() {
         }
     }
 
-    const hackAcc = async (obj) => {
-        await axios.post(`http://localhost:3000/users/logout`, {
-            id: user.Id
-        }, {
-            headers: {
-                Authorization: 'Bearer ' + user.token
-            }
-        })
-        const json = {
-            email: obj.Email,
-            secretKey: "a"
-        }
-        console.log(json)
-        const response = await axios.post('http://localhost:3000/users/login', json)
-        sessionStorage.setItem("loginedUser", JSON.stringify(response.data))
-        navigate('/')
-        window.location.reload()
-    }
+    //const hackAcc = async (obj) => {
+    //    await axios.post(`http://localhost:3000/users/logout`, {
+    //        id: user.Id
+    //    }, {
+    //        headers: {
+    //            Authorization: 'Bearer ' + sessionStorage.loginedUser
+    //        }
+    //    })
+    //    const json = {
+    //        email: obj.Email,
+    //        secretKey: "a"
+    //    }
+    //    console.log(json)
+    //    const response = await axios.post('http://localhost:3000/users/login', json)
+    //    sessionStorage.setItem("loginedUser", JSON.stringify(response.data))
+    //    navigate('/')
+    //    window.location.reload()
+    //}
 
     const handleSwitchPage = (page) => {
         setPage(page)
@@ -191,7 +191,7 @@ export default function Users() {
         axios
             .post('http://localhost:3000/users/filter/', json, {
                 headers: {
-                    Authorization: 'Bearer ' + user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             .then((response) => {
@@ -467,9 +467,9 @@ export default function Users() {
                                                                         ></TextField>
                                                                     </div>
                                                                 )}
-                                                                <div className="m-8">
-                                                                    <Button variant="contained" onClick={async() => { hackAcc(await fetchUserInfo(_user.Email)) }}>Truy cập tài khoản này</Button>
-                                                                </div>
+                                                                {/*<div className="m-8">*/}
+                                                                {/*    <Button variant="contained" onClick={async() => { hackAcc(await fetchUserInfo(_user.Email)) }}>Truy cập tài khoản này</Button>*/}
+                                                                {/*</div>*/}
                                                                 <div className="flex justify-end">
                                                                     <Button variant="outlined" onClick={close}>
                                                                         Cancel

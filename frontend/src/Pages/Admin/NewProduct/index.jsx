@@ -86,7 +86,7 @@ export default function NewProduct() {
         if (json.Stock && json.Name && json.Category && json.Price && json.Status && json.material && json.material != 9999) {
             await axios.post(`http://localhost:3000/products/add`, json, {
                 headers: {
-                    Authorization: 'Bearer ' + user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             alert('Đã thêm sản phẩm')

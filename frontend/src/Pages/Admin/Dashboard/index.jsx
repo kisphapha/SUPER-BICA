@@ -17,7 +17,7 @@ function Dashboard() {
     async function fetchBestSellers() {
         const response = await Axios.get(`http://localhost:3000/admin/getBestSelling`, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         if (response.data) {

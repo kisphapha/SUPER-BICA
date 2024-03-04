@@ -100,7 +100,7 @@ export default function ProductDetails() {
         if (user) {
             const response = await axios.get(`http://localhost:3000/users/getVoucher/${user.Id}`, {
                 headers: {
-                    Authorization: 'Bearer ' + user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             setVoucherList(response.data)
@@ -110,7 +110,7 @@ export default function ProductDetails() {
         if (user) {
             const response = await axios.get(`http://localhost:3000/address/${user.Id}`, {
                 headers: {
-                    Authorization: 'Bearer ' + user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             setAddressList(response.data)
@@ -169,7 +169,7 @@ export default function ProductDetails() {
             Content: replyContent
         }, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         await axios.post('http://localhost:3000/notification/', {

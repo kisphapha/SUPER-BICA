@@ -49,7 +49,7 @@ export default function NewMaterial({setMaterial, materialPopup, setMaterialPop,
                 price: materialPrice
             }, {
                 headers: {
-                    Authorization: 'Bearer ' + user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             alert("Đã thêm vật liệu")

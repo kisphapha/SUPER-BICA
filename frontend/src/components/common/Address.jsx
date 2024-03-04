@@ -13,7 +13,7 @@ const Address = (props) => {
     async function fetchAddresses() {
         const response = await axios.get(`http://localhost:3000/address/${props.user.Id}`, {
             headers: {
-                Authorization: 'Bearer ' + props.user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         setAddressList(response.data)

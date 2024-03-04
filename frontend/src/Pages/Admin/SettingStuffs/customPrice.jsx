@@ -45,7 +45,7 @@ export default function CustomPrice({user }) {
             price: newPrice
         }, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         alert("Đã cập nhật giá")

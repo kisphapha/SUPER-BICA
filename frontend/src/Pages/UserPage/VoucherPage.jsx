@@ -15,7 +15,7 @@ export default function VoucherPage() {
     async function fetchVoucher() {
         const response = await axios.get(`http://localhost:3000/users/getVoucher/${user.Id}`, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         setVoucher(response.data)

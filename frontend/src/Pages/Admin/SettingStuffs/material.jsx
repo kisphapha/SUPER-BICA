@@ -116,7 +116,7 @@ export default function Materials({ user }) {
                 price: newPrice
             }, {
                 headers: {
-                    Authorization: 'Bearer ' + user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             alert("Đã thêm vật liệu")
@@ -137,7 +137,7 @@ export default function Materials({ user }) {
                 price: newPrice
             }, {
                 headers: {
-                    Authorization: 'Bearer ' + user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             alert("Đã cập nhật vật liệu")
@@ -153,7 +153,7 @@ export default function Materials({ user }) {
             if (confirm) {
                 await axios.delete('http://localhost:3000/material/'+material, {
                     headers: {
-                        Authorization: 'Bearer ' + user.token
+                        Authorization: 'Bearer ' + sessionStorage.loginedUser
                     }
                 })
                 alert("Đã xóa vật liệu")

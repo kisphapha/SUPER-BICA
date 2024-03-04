@@ -65,7 +65,7 @@ const OrderList = (props) => {
     async function fetchVouchers() {
         const response = await axios.get(`http://localhost:3000/users/getVoucher/${props.user.Id}`, {
             headers: {
-                Authorization: 'Bearer ' + props.user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         setVouchers(response.data)
@@ -85,7 +85,7 @@ const OrderList = (props) => {
         if (json.StarPoint > 0) {
             const res = await axios.post(`http://localhost:3000/products/rating/`, json, {
                 headers: {
-                    Authorization: 'Bearer ' + props.user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             await axios.post('http://localhost:3000/notification/', {
@@ -110,7 +110,7 @@ const OrderList = (props) => {
     async function handleDelete(Id, close) {
         const res = await axios.delete(`http://localhost:3000/products/rating/${props.user.Id}/${Id}`, {
             headers: {
-                Authorization: 'Bearer ' + props.user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         await axios.delete(`http://localhost:3000/notification/1/${Id + "f"}`, {
@@ -127,7 +127,7 @@ const OrderList = (props) => {
         if (confirm) {
             await axios.delete(`http://localhost:3000/order/${Id}/${props.user.Id}`, {
                 headers: {
-                    Authorization: 'Bearer ' + props.user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             await axios.patch('http://localhost:3000/notification/', {
@@ -169,7 +169,7 @@ const OrderList = (props) => {
     async function fetchOrder() {
         const response = await axios.get(`http://localhost:3000/order/user/${props.user.Id}`, {
             headers: {
-                Authorization: 'Bearer ' + props.user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         if (response.data) {
@@ -242,7 +242,7 @@ const OrderList = (props) => {
             itemId : itemId
         }, {
             headers: {
-                Authorization: 'Bearer ' +props.user.token
+                Authorization: 'Bearer ' +sessionStorage.loginedUser
             }
         })
         await axios.post('http://localhost:3000/notification/', {

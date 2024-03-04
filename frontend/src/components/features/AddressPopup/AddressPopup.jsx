@@ -47,7 +47,7 @@ function AddressPopup(props) {
             }
             await axios.post(`http://localhost:3000/address/edit`, json, {
                 headers: {
-                    Authorization: 'Bearer ' + props.user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             alert('Địa chỉ được cập nhật')
@@ -69,7 +69,7 @@ function AddressPopup(props) {
                     id : props.user.Id 
                 }, {
                     headers: {
-                        Authorization: 'Bearer ' + props.user.token
+                        Authorization: 'Bearer ' + sessionStorage.loginedUser
                     }
                 })
             toast.dismiss()

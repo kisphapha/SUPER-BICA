@@ -88,7 +88,7 @@ export default function Products() {
     async function handleDelete(id) {
         await axios.delete(`http://localhost:3000/products/` + id, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         alert('Product deleted')

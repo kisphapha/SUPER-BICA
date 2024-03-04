@@ -109,7 +109,7 @@ export default function EditProductForm({ productId, close, handleFilter, user }
         console.log(json)
         await axios.post(`http://localhost:3000/products/update`, json, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         alert('Product updated')

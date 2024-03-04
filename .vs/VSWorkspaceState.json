@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\backend",
+    "\\backend\\controllers",
+    "\\frontend",
+    "\\frontend\\src",
+    "\\frontend\\src\\components",
+    "\\frontend\\src\\components\\features",
+    "\\frontend\\src\\components\\features\\AddressCard",
+    "\\frontend\\src\\components\\features\\AddressPopup",
+    "\\frontend\\src\\components\\features\\Card"
+  ],
+  "SelectedNode": "\\backend\\controllers\\UserController.js",
+  "PreviewInSolutionExplorer": false
+}

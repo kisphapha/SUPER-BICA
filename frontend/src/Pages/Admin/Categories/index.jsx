@@ -77,7 +77,7 @@ export default function Categories() {
         try{
             const response = await axios.delete('http://localhost:3000/category/delete/' + id, {
                 headers: {
-                    Authorization: 'Bearer ' + user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             alert("Đã xóa danh mục này")
@@ -111,7 +111,7 @@ export default function Categories() {
             console.log(json)
             await axios.post(`http://localhost:3000/category/add`, json, {
                 headers: {
-                    Authorization: 'Bearer ' + user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             alert('Đã thêm Danh mục sản phẩm')
@@ -136,7 +136,7 @@ export default function Categories() {
         console.log(json)
         await axios.post(`http://localhost:3000/category/update`, json, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         alert('Đã cập nhật Danh mục sản phẩm')

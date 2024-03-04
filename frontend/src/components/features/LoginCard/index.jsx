@@ -6,14 +6,31 @@ import logo from '../../../image/icons/logo.png'
 function LoginCard() {
     const [email, setEmail] = useState('')
     const [googleUser, setGoogleUser] = useState('')
+    //const [credential, setCredential] = useState('')
 
-    function handlecallbackResponse(response) {
-        document.getElementById('google').hidden = true
+    async function handlecallbackResponse(response) {
         //console.log('Encoded JWT ID Token: ' + response.credential)
-        var userObject = jwtDecode(response.credential)
-        setGoogleUser(userObject)
+        //var userObject = jwtDecode(response.credential)
+        //setGoogleUser(userObject)
         //console.log(userObject)
-        setEmail(userObject.email)
+        //setCredential(response)
+        const user = await axios.post('http://localhost:3000/users/login', {
+            credential: response.credential
+        })
+        sessionStorage.setItem('loginedUser', response.credential)
+        if (!user.data) {
+            console.log(user)
+            const googleUser = jwtDecode(response.credential)
+            await axios.post(
+                'http://localhost:3000/users/new/', {
+                    name : googleUser.name,
+                    email: googleUser.email,
+                    picture: googleUser.picture,
+                    secretKey: googleUser.sub
+                }
+            )
+        }
+        window.location.reload()
     }
 
     useEffect(() => {
@@ -30,40 +47,40 @@ function LoginCard() {
         })
     })
 
-    useEffect(() => {
-        async function fetchUsers() {
-            const json ={
-                email: email,
-                secretKey: googleUser.sub
-            }
-            console.log(json)
-            const response = await axios.post('http://localhost:3000/users/login', json)
-            
-            if (response.data.message != "Invalid user") {
-                if (response.data.Status == "Inactive") {
-                    alert("Tài khoản của bạn đã bị vô hiệu hóa. Vui lòng liên lạc ban quản lý để được hỗ trợ"
-                        + "\nLý do : " + response.data.ReasonBlocked)
-                } else {
-                    sessionStorage.setItem('loginedUser', JSON.stringify(response.data))
-                }
-            } else {
-                await axios.post(
-                    'http://localhost:3000/users/new/', {
-                        name : googleUser.name,
-                        email: googleUser.email,
-                        picture: googleUser.picture,
-                        secretKey: googleUser.sub
-                    }
-                )
-                await fetchUsers()
-            }
-            window.location.reload()
-        }
+    //useEffect(() => {
+    //    async function fetchUsers() {
+    //        const json = {
+    //            email: email,
+    //            secretKey: googleUser.sub
+    //        }
 
-        if (email != '') {
-            fetchUsers()
-        }
-    })
+    //        console.log(json)
+    //        const response = await axios.post('http://localhost:3000/users/login', json)
+
+    //        //if (response.data.message != "Invalid user") {
+    //        //    if (response.data.Status == "Inactive") {
+    //        //        alert("Tài khoản của bạn đã bị vô hiệu hóa. Vui lòng liên lạc ban quản lý để được hỗ trợ"
+    //        //            + "\nLý do : " + response.data.ReasonBlocked)
+    //        //    } else {
+    //        //    }
+    //        //} else {
+    //        //    await axios.post(
+    //        //        'http://localhost:3000/users/new/', {
+    //        //            name : googleUser.name,
+    //        //            email: googleUser.email,
+    //        //            picture: googleUser.picture,
+    //        //            secretKey: googleUser.sub
+    //        //        }
+    //        //    )
+    //        //    await fetchUsers()
+    //        //}
+    //        //window.location.reload()
+    //    }
+
+    //    if (email != '') {
+    //        fetchUsers()
+    //    }
+    //})
 
     return (
         <div
@@ -82,7 +99,7 @@ function LoginCard() {
                     alignItems: 'center'
                 }}
             >
-                <img src={logo} style={{ height: '128px', width: '128px' }}/>
+                <img src={logo} style={{ height: '128px', width: '128px' }} />
                 <h1>Đăng nhập</h1>
             </div>
             <div

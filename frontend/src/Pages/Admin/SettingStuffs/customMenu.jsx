@@ -110,7 +110,7 @@ export default function CustomMenu({user }) {
             picture : url
         }, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         alert("Đã thêm danh mục")
@@ -130,7 +130,7 @@ export default function CustomMenu({user }) {
             picture: url
         }, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         alert("Đã cập nhật danh mục")
@@ -142,7 +142,7 @@ export default function CustomMenu({user }) {
         if (confirm) {
             await axios.delete('http://localhost:3000/custom/menu/' + id, {
                 headers: {
-                    Authorization: 'Bearer ' + user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             alert("Đã xóa danh mục")

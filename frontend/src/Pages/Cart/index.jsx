@@ -292,7 +292,7 @@ export default function Cart() {
     async function fetchAddresses() {
         const response = await axios.get(`http://localhost:3000/address/${user.Id}`, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         setAddressList(response.data)
@@ -301,7 +301,7 @@ export default function Cart() {
     async function fetchVouchers() {
         const response = await axios.get(`http://localhost:3000/users/getVoucher/${user.Id}`, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         setVoucherList(response.data)

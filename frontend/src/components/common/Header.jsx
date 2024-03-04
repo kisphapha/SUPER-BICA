@@ -50,14 +50,14 @@ function Header() {
     const navigate = useNavigate()
 
     async function handleSignOut(e) {
-        console.log(user.token)
-        await axios.post(`http://localhost:3000/users/logout`, {
-            id : user.Id
-        }, {
-            headers: {
-                Authorization: 'Bearer ' + user.token
-            }
-        })
+        //.log(sessionStorage.loginedUser)
+        //await axios.post(`http://localhost:3000/users/logout`, {
+        //    id : user.Id
+        //}, {
+        //    headers: {
+        //        Authorization: 'Bearer ' + sessionStorage.loginedUser
+        //    }
+        //})
         sessionStorage.removeItem('loginedUser')
         navigate('/')
         window.location.reload()

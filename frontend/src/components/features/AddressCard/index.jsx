@@ -12,7 +12,7 @@ export default function AddressCard({ id, city, district, ward, street, fetchAdd
     async function handleDelete() {
         await axios.delete(`http://localhost:3000/address/delete/${id}/${user.Id}`, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         console.log(id)

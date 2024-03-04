@@ -403,7 +403,7 @@ export default function Custom() {
         //console.log(request)
         const response = await axios.post("http://localhost:3000/custom/", request, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         await axios.post('http://localhost:3000/notification/', {
@@ -435,7 +435,7 @@ export default function Custom() {
         //console.log(request)
         await axios.patch("http://localhost:3000/custom", request, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         await axios.post('http://localhost:3000/notification/', {

@@ -1,17 +1,6 @@
 const User = require("../models/User");
 const authentication = require('../authentication')
 
-const generateToken = (length) => {
-    const alphabet_str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0987654321";
-    let randomString = "";
-    for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * alphabet_str.length);
-        randomString += alphabet_str.charAt(randomIndex);
-    }
-    return randomString;
-
-}
-
 
 const getAllUser = async (req, res) => {
     try {
@@ -33,38 +22,38 @@ const getUserByEmail = async (req, res) => {
 
 const login = async (req, res) => {
     try {
-        const response = {}
-        const email = req.body.email
-        const secretKey = req.body.secretKey
-        const userData = await User.checkLogin(email, secretKey);
+        //const response = {}
+        const credential = req.body.credential
+        const userData = await User.checkLogin(credential);
         if (!userData) {
-            throw new Error("Invalid user")
+            res.json(null)
+        } else {
+            res.json(userData);
         }
-        const checkLogined = authentication.tokenList.filter((element) => element.id == userData.Id)[0]
-        let token
-        response.userData = userData
-        if (!checkLogined) {
-            token = generateToken(20)
-            response.token = token
-            authentication.tokenList.push({ id: userData.Id, role: userData.Role, token: token })
-        }
-        else {
-            token = checkLogined.token
-            response.token = token
-        }
-        res.json(response);
+        //const checkLogined = authentication.tokenList.filter((element) => element.id == userData.Id)[0]
+        //let token
+        //response.userData = userData
+        //if (!checkLogined) {
+        //    token = generateToken(20)
+        //    response.token = token
+        //    authentication.tokenList.push({ id: userData.Id, role: userData.Role, token: token })
+        //}
+        //else {
+        //    token = checkLogined.token
+        //    response.token = token
+        //}
     } catch (error) {
-        res.json({ message: error.message });
+        res.status(400).json({ message: error.message });
     }
 }
 const logout = async (req, res) => {
     //
-    const { id } = req.body;
+    //const { id } = req.body;
 
-    const index = authentication.tokenList.findIndex((element) => element.id === id);
-    if (index !== -1) {
-        authentication.tokenList.splice(index, 1);
-    }
+    //const index = authentication.tokenList.findIndex((element) => element.id === id);
+    //if (index !== -1) {
+    //    authentication.tokenList.splice(index, 1);
+    //}
 
     res.json({ message: "Logged out!" });
 }

@@ -1,5 +1,6 @@
 ﻿const config = require("../config/db.config");
 const sql = require("mssql");
+const jwt = require("jsonwebtoken")
 
 const getAllUser = async () => {
     try {
@@ -29,19 +30,19 @@ const getUserByEmail = async (email) => {
         console.log("error: ", error);
     }
 };
-const checkLogin = async (email, secretKey) => {
+const checkLogin = async (credential) => {
     try {
+        const user = jwt.decode(credential);
         let poolConnection = await sql.connect(config);
         const query = `
             SELECT Id, Name, Email, Picture, DateOfBirth, PhoneNumber, Role, Point, Status, CreatedAt
             FROM [dbo].[User]
-            WHERE email = @Email and secretKey = @SecretKey;
+            WHERE email = @Email;
         `;
         const result = await poolConnection.request()
-            .input('Email', sql.NVarChar, email)
-            .input('SecretKey', sql.NVarChar, secretKey)
+            .input('Email', sql.NVarChar, user.email)
             .query(query);
-        return result.recordset[0];
+        return result.recordset[0] 
     } catch (error) {
         console.log("error: ", error);
     }

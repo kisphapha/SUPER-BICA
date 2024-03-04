@@ -59,7 +59,7 @@ function DetailedCustom() {
             orderId: orderId
         }, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         await Axios.patch('http://localhost:3000/notification/img', {
@@ -108,7 +108,7 @@ function DetailedCustom() {
             id: user.Id
         }, {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         if (order.other.Shop_respond) {
@@ -153,7 +153,7 @@ function DetailedCustom() {
                 final_time: finalTime
             }, {
                 headers: {
-                    Authorization: 'Bearer ' + user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             await Axios.patch('http://localhost:3000/notification/', {

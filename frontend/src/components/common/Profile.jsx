@@ -109,14 +109,14 @@ const Profile = (props) => {
                         dob: _dob
                     }, {
                         headers: {
-                            Authorization: 'Bearer ' + props.user.token
+                            Authorization: 'Bearer ' + props.sessionStorage.loginedUser
                         }
                     }
                 )
                 if (response.data) {
                     const newUser = {}
                     newUser.userData = response.data
-                    newUser.token = props.user.token
+                    newUser.token = props.sessionStorage.loginedUser
                     sessionStorage.setItem('loginedUser', JSON.stringify(newUser))
                     alert('Đã cập nhật hồ sơ')
                     window.location.reload()

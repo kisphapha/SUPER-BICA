@@ -55,7 +55,7 @@ const OrderListCustom = (props) => {
     async function fetchAddresses() {
         const response = await axios.get(`http://localhost:3000/address/${props.user.Id}`, {
             headers: {
-                Authorization: 'Bearer ' + props.user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         setAddressList(response.data)
@@ -108,7 +108,7 @@ const OrderListCustom = (props) => {
     async function fetchVouchers() {
         const response = await axios.get(`http://localhost:3000/users/getVoucher/${props.user.Id}`, {
             headers: {
-                Authorization: 'Bearer ' + props.user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         setVouchers(response.data)
@@ -122,7 +122,7 @@ const OrderListCustom = (props) => {
                 orderId : id
             }, {
                 headers: {
-                    Authorization: 'Bearer ' + props.user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             await axios.patch('http://localhost:3000/notification/', {
@@ -150,7 +150,7 @@ const OrderListCustom = (props) => {
     async function handleDelete(id) {
         await axios.delete(`http://localhost:3000/custom/${props.user.Id}/${id}`, {
             headers: {
-                Authorization: 'Bearer ' + props.user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         fetchCustomOrder()
@@ -177,7 +177,7 @@ const OrderListCustom = (props) => {
     async function fetchCustomOrder() {
         const response = await axios.get(`http://localhost:3000/custom/user/${props.user.Id}`, {
             headers: {
-                Authorization: 'Bearer ' + props.user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         });
         setCards(response.data);
@@ -198,7 +198,7 @@ const OrderListCustom = (props) => {
                             id : props.user.Id
                         }, {
                             headers: {
-                                Authorization: 'Bearer ' + props.user.token
+                                Authorization: 'Bearer ' + sessionStorage.loginedUser
                             }
                         })
 

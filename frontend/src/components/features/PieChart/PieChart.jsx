@@ -27,7 +27,7 @@ function PieChart({user }) {
         async function fetchData() {
             const res = await axios.get('http://localhost:3000/order/pieChartData', {
                 headers: {
-                    Authorization: 'Bearer ' + user.token
+                    Authorization: 'Bearer ' + sessionStorage.loginedUser
                 }
             })
             if (res.data) {

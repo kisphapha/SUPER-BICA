@@ -36,7 +36,7 @@ export default function News() {
         const counting = [0,0]
         const system = await axios.get('http://localhost:3000/notification/', {
             headers: {
-                Authorization: 'Bearer ' + user.token
+                Authorization: 'Bearer ' + sessionStorage.loginedUser
             }
         })
         const personal = await axios.get('http://localhost:3000/notification/' + user.Id, {
